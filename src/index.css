@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-warm: #FAF7F2;
+    --bg-surface: #F5EFEB;
+    --bg-card: #FFFFFF;
+    --terracotta: #C85A32;
+    --terracotta-dark: #A9431E;
+    --terracotta-light: #F4EAE4;
+    --graphite: #1F2022;
+    --graphite-muted: #57585C;
+    --sand-border: #E8DFD3;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: var(--graphite);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Custom subtle vintage paper grain */
+.bg-grain {
+  background-image: radial-gradient(rgba(31, 32, 34, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-sepia-overlay {
+  background: linear-gradient(180deg, rgba(200, 90, 50, 0.03) 0%, rgba(31, 32, 34, 0.05) 100%);
+}
+
+/* Custom subtle animations */
+@keyframes subtle-breath {
+  0%, 100% {
+    transform: scale(1.0) translateY(0);
+    filter: brightness(1.0);
+  }
+  50% {
+    transform: scale(1.02) translateY(-2px);
+    filter: brightness(1.03);
+  }
+}
+
+@keyframes gentle-blink {
+  0%, 94%, 98%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes shimmer-gold {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-breath {
+  animation: subtle-breath 5s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: gentle-blink 6s ease-in-out infinite;
+}
+
+/* Range input custom styling for slider */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.slider-img,
+.slider-container img,
+.comparison-slider img {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  max-width: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #C85A32;
+  cursor: ew-resize;
+  box-shadow: 0 4px 12px rgba(200, 90, 50, 0.4);
+  border: 3px solid #FFFFFF;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #C85A32;
+  cursor: ew-resize;
+  box-shadow: 0 4px 12px rgba(200, 90, 50, 0.4);
+  border: 3px solid #FFFFFF;
+}
